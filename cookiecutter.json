@@ -21,7 +21,7 @@
   "python_product_flavors": "{{ 'py' + cookiecutter.python_version.replace('.', '').strip() }}",
   "python_command": "",
   "pyc_src": [
-    "None",
+    "Auto",
     "False",
     "True"
   ],
