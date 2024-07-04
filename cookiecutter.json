@@ -1,0 +1,55 @@
+{
+  "project_name": "Hello Chaquopy",
+  "project_slug": "{{ cookiecutter.project_name.title().replace(' ', '') }}",
+  "package_name": "com.example.{{ cookiecutter.project_slug.lower() }}",
+  "source_path": "{{ cookiecutter.package_name.replace('.', '/') }}",
+  "min_sdk": 24,
+  "compile_sdk": 34,
+  "target_sdk": 34,
+  "abi_arm64_v8a": true,
+  "abi_armeabi_v7a": true,
+  "abi_x86": true,
+  "abi_x86_64": true,
+  "agp_version": "8.3.1",
+  "kgp_version": "1.9.23",
+  "chaquopy_version": "15.0.1",
+  "gradle_wrapper_url": "https://services.gradle.org/distributions/gradle-8.4-all.zip",
+  "java_source_compatibility": "VERSION_1_8",
+  "java_target_compatibility": "VERSION_1_8",
+  "jvm_target": "1.8",
+  "python_version": "3.8",
+  "python_product_flavors": "{{ 'py' + cookiecutter.python_version.replace('.', '').strip() }}",
+  "python_command": "",
+  "pyc_src": [
+    "None",
+    "False",
+    "True"
+  ],
+  "pyc_pip": [
+    "Auto",
+    "False",
+    "True"
+  ],
+  "pyc_stdlib": [
+    "Auto",
+    "False",
+    "True"
+  ],
+  "python_source_set": {
+    "name": null,
+    "src_dir": null
+  },
+
+  "_python_dependencies": [],
+  "_pip_extra_index_urls": [],
+  "_python_static_proxies": [],
+  "_python_extract_packages": [],
+
+  "_extra_plugin_maven_repositories": [],
+  "_extra_dependency_maven_repositories": [],
+  "_copy_without_render": [
+    "gradlew",
+    "gradlew.bat",
+    "gradle-wrapper.jar"
+  ]
+}
