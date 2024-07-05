@@ -87,6 +87,7 @@ android {
                 *
                 * See: https://chaquo.com/chaquopy/doc/current/android.html#buildpython
                 */
+                // buildPython("path/to/python/executable")
                 {% if cookiecutter.python_command -%}
                 buildPython("{{ cookiecutter.python_command }}")
                 {% endif -%}
