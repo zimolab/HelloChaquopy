@@ -51,5 +51,6 @@
     "gradlew",
     "gradlew.bat",
     "gradle-wrapper.jar"
-  ]
+  ],
+  "_extra_configs": {}
 }
