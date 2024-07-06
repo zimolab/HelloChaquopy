@@ -89,7 +89,7 @@ android {
                 */
                 // buildPython("path/to/python/executable")
                 {% if cookiecutter.python_command -%}
-                buildPython("{{ cookiecutter.python_command }}")
+                buildPython("""{{ cookiecutter.python_command }}""")
                 {% endif %}
 
                 /**
