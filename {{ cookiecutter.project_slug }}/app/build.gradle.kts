@@ -151,7 +151,7 @@ android {
                  */
                 // staticProxy("module.one", "module.two")
                 {% if cookiecutter.static_proxies -%}
-                {% for proxy in cookiecutter.static_proxies['modules'] -%}
+                {% for proxy in cookiecutter.static_proxies['classes'] -%}
                 staticProxy("{{ proxy }}")
                 {% endfor -%}
                 {% endif %}
