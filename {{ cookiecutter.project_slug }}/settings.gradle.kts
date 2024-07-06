@@ -1,7 +1,7 @@
 pluginManagement {
     repositories {
-        {% if cookiecutter._extra_plugin_maven_repositories -%}
-        {% for repo in cookiecutter._extra_plugin_maven_repositories -%}
+        {% if cookiecutter.maven_repos -%}
+        {% for repo in cookiecutter.maven_repos['plugin'] -%}
         maven(url = "{{ repo }}")
         {% endfor -%}
         {% endif -%}
@@ -19,8 +19,8 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
-        {% if cookiecutter._extra_dependency_maven_repositories -%}
-        {% for repo in cookiecutter._extra_dependency_maven_repositories -%}
+        {% if cookiecutter.maven_repos -%}
+        {% for repo in cookiecutter.maven_repos['dependency'] -%}
         maven(url = "{{ repo }}")
         {% endfor -%}
         {% endif -%}

@@ -40,17 +40,28 @@
     "src_dir": null
   },
 
-  "_python_dependencies": [],
-  "_pip_extra_index_urls": [],
-  "_python_static_proxies": [],
-  "_python_extract_packages": [],
+  "pip": {
+    "index_url": "",
+    "extra_index_urls": [],
+    "requirements": []
+  },
 
-  "_extra_plugin_maven_repositories": [],
-  "_extra_dependency_maven_repositories": [],
+  "static_proxies": {
+    "modules": []
+  },
+  "extract_packages": {
+    "packages": []
+  },
+
+  "maven_repos": {
+    "plugin": [],
+    "dependency": []
+  },
+  "extra_configs": {},
+
   "_copy_without_render": [
     "gradlew",
     "gradlew.bat",
     "gradle-wrapper.jar"
-  ],
-  "_extra_configs": {}
+  ]
 }

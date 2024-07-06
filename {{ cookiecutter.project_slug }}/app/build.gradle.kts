@@ -90,7 +90,7 @@ android {
                 // buildPython("path/to/python/executable")
                 {% if cookiecutter.python_command -%}
                 buildPython("{{ cookiecutter.python_command }}")
-                {% endif -%}
+                {% endif %}
 
                 /**
                 * Install python packages
@@ -117,14 +117,17 @@ android {
                     // options method. For example:
                     // options("--extra-index-url", "https://example.com/private/repository")
                     // install("MyPackage==1.2.3")
-                    {% if cookiecutter._pip_extra_index_urls -%}
-                    {% for index_url in cookiecutter._pip_extra_index_urls -%}
+                    
+                    {% if cookiecutter.pip -%}
+                    {% if cookiecutter.pip['index_url'] %}
+                    options("--index-url", "{{ cookiecutter.pip['index_url'] }}")
+                    {% endif -%}
+                    {% for index_url in cookiecutter.pip['extra_index_urls'] -%}
                     options("--extra-index-url", "{{ index_url }}")
                     {% endfor -%}
                     {% endif %}
-
-                    {% if cookiecutter._python_dependencies -%}
-                    {% for dep in cookiecutter._python_dependencies -%}
+                    {% if cookiecutter.pip -%}
+                    {% for dep in cookiecutter.pip['requirements'] -%}
                     install("{{ dep }}")
                     {% endfor -%}
                     {% endif %}
@@ -147,8 +150,8 @@ android {
                  * See: https://chaquo.com/chaquopy/doc/current/android.html#static-proxy-generator
                  */
                 // staticProxy("module.one", "module.two")
-                {% if cookiecutter._python_static_proxies -%}
-                {% for proxy in cookiecutter._python_static_proxies -%}
+                {% if cookiecutter.static_proxies -%}
+                {% for proxy in cookiecutter.static_proxies['modules'] -%}
                 staticProxy("{{ proxy }}")
                 {% endfor -%}
                 {% endif %}
@@ -165,8 +168,8 @@ android {
                  * See: https://chaquo.com/chaquopy/doc/current/android.html#extractpackages
                  */
                 // extractPackages("package1", "package2.subpkg")
-                {% if cookiecutter._python_extract_packages -%}
-                {% for pkg in cookiecutter._python_extract_packages -%}
+                {% if cookiecutter.extract_packages -%}
+                {% for pkg in cookiecutter.extract_packages['packages'] -%}
                 staticProxy("{{ pkg }}")
                 {% endfor -%}
                 {% endif %}
