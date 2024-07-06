@@ -150,8 +150,8 @@ android {
                  * See: https://chaquo.com/chaquopy/doc/current/android.html#static-proxy-generator
                  */
                 // staticProxy("module.one", "module.two")
-                {% if cookiecutter.static_proxies -%}
-                {% for proxy in cookiecutter.static_proxies['classes'] -%}
+                {% if cookiecutter.static_proxy -%}
+                {% for proxy in cookiecutter.static_proxy['classes'] -%}
                 staticProxy("{{ proxy }}")
                 {% endfor -%}
                 {% endif %}

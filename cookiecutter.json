@@ -46,7 +46,7 @@
     "requirements": []
   },
 
-  "static_proxies": {
+  "static_proxy": {
     "classes": []
   },
   "extract_packages": {
